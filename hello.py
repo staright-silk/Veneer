@@ -5,4 +5,8 @@ print("You can choose 4 paths / occupations:\n"
       "2. Doctor\n"
       "3. Fisherman\n"
       "4. Hunter")
-occupation=str (input("Enter your choice of occupation: ".capitalize()))
+occupation=str(input("Enter your choice of occupation: -> do not make spelling mistakes".capitalize()))
+occupations=["Carpenter","Doctor","Fisherman","Hunter"]
+if occupation.capitalize() in occupations:
+    print("Occupation has been selected")
+
