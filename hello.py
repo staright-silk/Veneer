@@ -1,2 +1,4 @@
-git config --global user.name "Atreya Chakraborty"
-$ git config --global user.email atreya.sept@gmail.com
+userdetails=str(input("Enter your name: "))
+print(f"Hello,{userdetails.capitalize()}!")
+print("")
+occupation=str(input)
