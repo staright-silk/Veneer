@@ -9,4 +9,16 @@ occupation=str(input("Enter your choice of occupation: -> do not make spelling m
 occupations=["Carpenter","Doctor","Fisherman","Hunter"]
 if occupation.capitalize() in occupations:
     print("Occupation has been selected")
+else:    print("Occupation has not been selected")
+if occupation.capitalize() == "Carpenter":
+    print("You have chosen to be a carpenter")
+elif occupation.capitalize() == "Doctor":
+      print("You have chosen to be a doctor")
+elif occupation.capitalize() == "Fisherman":      print("You have chosen to be a fisherman")
+elif occupation.capitalize() == "Hunter":
+      print("You have chosen to be a hunter")
+
+else:    print("You have not chosen an occupation")
+
+
 
