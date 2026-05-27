@@ -39,3 +39,6 @@ if occupation.capitalize() in occupations:
 
 else:
     print("Occupation has not been selected")
+
+
+print("You arrive at Moonfall Town. \nAs you look up at the glistening sky, you see stars shining like white pearls.\n The trees bordering the side of the road are laced with beautiful strings of glowing unknown material, seems natural. \n It is a lively town, the townsfolk are chattering and are having a good time. \n You smile at yourself as you feel a sense of belonging.")
