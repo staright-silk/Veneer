@@ -3,7 +3,22 @@ import doctor
 import fisherman
 import hunter
 import time
+import sys
+import time
 
+def type_print(text, delay=0.03):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()
+
+def type_input(text, delay=0.03):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(delay)
+    return input()
 name = input("Enter your name: ")
 print(f"Hello, {name.capitalize()}!")
 
@@ -15,7 +30,7 @@ print(
     "4. Hunter"
 )
 
-occupation = input("Enter your choice of occupation: ")
+occupation = type_input("Enter your choice of occupation: ")
 occupations = ["Carpenter", "Doctor", "Fisherman", "Hunter"]
 
 if occupation.capitalize() in occupations:
@@ -33,15 +48,8 @@ else:
     print("Occupation has not been selected")
 
 time.sleep(2)
-import sys
-import time
 
-def type_print(text, delay=0.03):
-    for char in text:
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(delay)
-    print()
+
 
 type_print("\nYou arrive at Moonfall Town. \nAs you look up at the glistening sky, you see stars shining like white pearls.\nThe trees bordering the side of the road are laced with beautiful strings of glowing unknown material, seems natural. \nIt is a lively town, the townsfolk are chattering and are having a good time. \nYou smile at yourself as you feel a sense of belonging.")
 
@@ -59,7 +67,7 @@ time.sleep(1.5)
 health = 100
 stamina = 50
 
-x = input("\nYou think whether to take rest or not \nat the nearby cabin, The Glade Of Sien.\n\nYes or No?: ")
+x = type_input("\nYou think whether to take rest or not \nat the nearby cabin, The Glade Of Sien.\n\nYes or No?: ")
 
 if x.strip().lower() in ['yes', 'y']:
     type_print("\nYou decided to rest at The Glade Of Sien.")
@@ -69,6 +77,9 @@ elif x.strip().lower() in ['no', 'n']:
     type_print("\nYou decided to keep moving.")
     stamina = max(0, stamina - 20)
     health = max(0, health - 5)
-    print(f"You grew tired. Current Stamina: {stamina}, Health: {health}")
+    type_print(f"You grow very tired. \nYour head feels dizzy and you slump to the ground as your consciousness fades away.")
+    type_print(f"Current Stamina: {stamina}, Health: {health}")
+          
 else:
     type_print("\nInvalid choice! Please type Yes or No.")
+
