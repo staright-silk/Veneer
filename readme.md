@@ -5,6 +5,6 @@ A text based adventure game (atleast what I aspire it to be), based on games lik
 3. fisherman
 4. hunter
 
-Each has their won path and journey. I hope to include a verse encompassing somewhat the depth of LOTR.
+Each has their own path and journey. I hope to include a verse encompassing somewhat the depth of LOTR.
 
 Thanks!
