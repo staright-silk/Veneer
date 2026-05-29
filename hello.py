@@ -67,18 +67,28 @@ time.sleep(1.5)
 health = 100
 stamina = 50
 
+def printh(text, delay = 0.063):
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()
+    
 x = type_input("\nYou think whether to take rest or not \nat the nearby cabin, The Glade Of Sien.\n\nYes or No?: ")
 
 if x.strip().lower() in ['yes', 'y']:
     type_print("\nYou decided to rest at The Glade Of Sien.")
     stamina = min(100, stamina + 30)
     print(f"Stamina recovered! Current Stamina: {stamina}, Health: {health}")
+    printh("You wake up at the cabin, groggily and squint your eyes. \n You look around and see the sun shining through the window, casting a warm glow on the wooden walls. \n You stretch your arms and legs, feeling refreshed and rejuvenated. \n You step outside and take a deep breath of the fresh air.")
 elif x.strip().lower() in ['no', 'n']:
     type_print("\nYou decided to keep moving.")
     stamina = max(0, stamina - 20)
     health = max(0, health - 5)
     type_print(f"You grow very tired. \nYour head feels dizzy and you slump to the ground as your consciousness fades away.")
     type_print(f"Current Stamina: {stamina}, Health: {health}")
+    type_print("You wake up a few hours later, feeling weak and disoriented. \n You look around and see that you are lying on the side of the road, with a few concerned townsfolk gathered around you. \n They offer you some water and help you to your feet, but you know that you need to find a place to rest soon.")
+    type_print("You continue walking, but you can feel your energy draining away. ")
           
 else:
     type_print("\nInvalid choice! Please type Yes or No.")
