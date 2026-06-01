@@ -81,20 +81,6 @@ if x.strip().lower() in ['yes', 'y']:
     stamina = min(100, stamina + 30)
     print(f"Stamina recovered! Current Stamina: {stamina}, Health: {health}")
     printh("You wake up at the cabin, groggily and squint your eyes. \n You look around and see the sun shining through the window, casting a warm glow on the wooden walls. \n You stretch your arms and legs, feeling refreshed and rejuvenated. \n You step outside and take a deep breath of the fresh air.")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 elif x.strip().lower() in ['no', 'n']:
     type_print("\nYou decided to keep moving.")
     stamina = max(0, stamina - 20)
@@ -107,3 +93,12 @@ elif x.strip().lower() in ['no', 'n']:
 else:
     type_print("\nInvalid choice! Please type Yes or No.")
 
+food=10
+tharni=50
+printh("You currently have 10 weights of Food left.")
+choice1=type_input("You decide that for the journey ahead, you need to stock up on some food and weaponry. But you only have 50 Tharni, what do you choose? ".capitalize())
+if m== "Food":
+    printh(f"You purchased 20 bread and 5 jars of jam! Nice Choice! You have  {tharni -50} Tharni and You have {food + 60} left!")
+if m== "Weapon" or "Weaponry":
+    printh(f"You purchased 5 weapons! Nice Choice")
+    choice2=type_input("You feel very hungry. Do")
