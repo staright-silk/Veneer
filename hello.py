@@ -81,6 +81,20 @@ if x.strip().lower() in ['yes', 'y']:
     stamina = min(100, stamina + 30)
     print(f"Stamina recovered! Current Stamina: {stamina}, Health: {health}")
     printh("You wake up at the cabin, groggily and squint your eyes. \n You look around and see the sun shining through the window, casting a warm glow on the wooden walls. \n You stretch your arms and legs, feeling refreshed and rejuvenated. \n You step outside and take a deep breath of the fresh air.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 elif x.strip().lower() in ['no', 'n']:
     type_print("\nYou decided to keep moving.")
     stamina = max(0, stamina - 20)
