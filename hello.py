@@ -97,8 +97,20 @@ food=10
 tharni=50
 printh("You currently have 10 weights of Food left.")
 choice1=type_input("You decide that for the journey ahead, you need to stock up on some food and weaponry. But you only have 50 Tharni, what do you choose? ".capitalize())
-if m== "Food":
+if choice1.strip().lower() == "food":
     printh(f"You purchased 20 bread and 5 jars of jam! Nice Choice! You have  {tharni -50} Tharni and You have {food + 60} left!")
-if m== "Weapon" or "Weaponry":
+if choice1.strip().lower() == "weapon" or choice1.strip().lower() == "weaponry":
     printh(f"You purchased 5 weapons! Nice Choice")
-    choice2=type_input("You feel very hungry. Do")
+    choice2=type_input("You feel very hungry. Do you want to eat some food? Yes or No? Do ".capitalize())
+    if choice2.strip().lower() in ['yes', 'y']:
+        food = max(0, food - 5)
+        health = min(100, health + 20)
+        type_print(f"You eat some food and feel rejuvenated! Current Food: {food}, Health: {health}")
+    elif choice2.strip().lower() in ['no', 'n']:
+        type_print("\nYou decided not to eat. You continue on your journey, but you can feel your energy draining away.")
+        stamina = max(0, stamina - 10)
+        health = max(0, health - 5)
+        type_print(f"Current Stamina: {stamina}, Health: {health}")
+    else:
+        type_print("\nInvalid choice! Please type Yes or No.")
+        
