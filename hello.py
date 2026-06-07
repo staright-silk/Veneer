@@ -8,14 +8,65 @@ import time
 import sys
 from save_system import save_game, load_game
 
-def main_menu():
-    print("\n=== LEGENDS OF ELWEN ===")
-    print("1. New Game")
-    print("2. Load Game")
-    print("3. Exit")
+def clear_terminal():
+    """Clear the terminal screen (Windows/Linux/Mac compatible)."""
+    os.system('cls' if os.name == 'nt' else 'clear')
 
-    choice = input("Choice: ")
-
+def title_screen():
+    """Display a professional ASCII art title screen."""
+    clear_terminal()
+    
+    # Professional ASCII art logo for "ELWEN : LEGENDS OF THE VENEER"
+    logo = """
+    
+    ███████████████████████████████████████████████████████████████████████████████████
+    
+    ███████╗ ██╗     ██╗    ██╗███████╗███╗   ██╗
+    ██╔════╝ ██║     ██║    ██║██╔════╝████╗  ██║    
+    █████╗   ██║     ██║ █╗ ██║█████╗  ██╔██╗ ██║  
+    ██╔══╝   ██║     ██║███╗██║██╔══╝  ██║╚██╗██║  
+    ███████╗ ███████╗╚███╔███╔╝███████╗██║ ╚████║    
+    ╚══════╝ ╚══════╝ ╚══╝╚══╝ ╚══════╝╚═╝  ╚═══╝   
+    
+    ████████████████████████████████████████████████████████████
+    
+    ██╗     ███████╗ ██████╗ ███████╗███╗   ██╗██████╗ ███████╗        
+    ██║     ██╔════╝██╔════╝ ██╔════╝████╗  ██║██╔══██╗██╔════╝        
+    ██║     █████╗  ██║  ███╗█████╗  ██╔██╗ ██║██║  ██║███████╗          
+    ██║     ██╔══╝  ██║   ██║██╔══╝  ██║╚██╗██║██║  ██║╚════██║          
+    ███████╗███████╗╚██████╔╝███████╗██║ ╚████║██████╔╝███████║        
+    ╚══════╝╚══════╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═════╝ ╚══════╝   
+        
+     ████████╗██╗  ██╗███████╗    ██╗   ██╗███████╗███╗   ██╗███████╗███████╗██████╗ 
+     ╚══██╔══╝██║  ██║██╔════╝    ██║   ██║██╔════╝████╗  ██║██╔════╝██╔════╝██╔══██╗
+        ██║   ███████║█████╗      ██║   ██║█████╗  ██╔██╗ ██║█████╗  █████╗  ██████╔╝
+        ██║   ██╔══██║██╔══╝      ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║██╔══╝  ██╔══╝  ██╔══██╗
+        ██║   ██║  ██║███████╗     ╚████╔╝ ███████╗██║ ╚████║███████╗███████╗██║  ██║
+        ╚═╝   ╚═╝  ╚═╝╚══════╝      ╚═══╝  ╚══════╝╚═╝  ╚═══╝╚══════╝╚══════╝╚═╝  ╚═╝
+    
+    ███████████████████████████████████████████████████████████████████████████████████
+    
+    """
+    
+    print(logo)
+    time.sleep(0.6)
+    
+    # Menu options
+    menu = """
+    ╔═════════════════════════════════════╗
+    ║                                     ║
+    ║  [1] New Game                       ║
+    ║  [2] Load Game                      ║
+    ║  [3] Settings                       ║
+    ║  [4] Exit                           ║
+    ║                                     ║
+    ╚═════════════════════════════════════╝
+    """
+    
+    print(menu)
+    
+    choice = input("    Enter your choice: ").strip()
+    
     return choice
 
 def type_print(text, delay=0.03):
@@ -32,7 +83,20 @@ def type_input(text, delay=0.03):
         time.sleep(delay)
     return input()
 
-choice = main_menu()
+choice = title_screen()
+
+# Menu loop to handle Settings
+while choice == "3":
+    clear_terminal()
+    print("\n╔══════════════════════════════════╗")
+    print("║          SETTINGS                ║")
+    print("║                                  ║")
+    print("║  Game Settings (Placeholder)    ║")
+    print("║  More options coming soon...     ║")
+    print("║                                  ║")
+    print("╚══════════════════════════════════╝\n")
+    input("Press Enter to return to menu...")
+    choice = title_screen()
 
 if choice == "1":
     player = {
@@ -89,7 +153,14 @@ elif choice == "2":
     print(f"Welcome back, {player['name']}!")
     resume_checkpoint = player.get("checkpoint", 1)
 
+elif choice == "4":
+    clear_terminal()
+    print("\nThanks for playing The Fall of Elwen!")
+    quit()
+
 else:
+    print("Invalid choice. Please select 1-4.")
+    time.sleep(1)
     quit()
 
 time.sleep(2)
