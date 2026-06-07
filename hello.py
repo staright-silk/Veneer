@@ -8,6 +8,15 @@ import time
 import sys
 import time
 
+def main_menu():
+    print("\n=== LEGENDS OF ELWEN ===")
+    print("1. New Game")
+    print("2. Load Game")
+    print("3. Exit")
+
+    choice = input("Choice: ")
+
+    return choice
 def type_print(text, delay=0.03):
     for char in text:
         sys.stdout.write(char)
