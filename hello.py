@@ -114,3 +114,6 @@ if choice1.strip().lower() == "weapon" or choice1.strip().lower() == "weaponry":
     else:
         type_print("\nInvalid choice! Please type Yes or No.")
         
+printh("As you continue your journey through the wilds of Elwen, you wander out of Moonfall \n, unknowingly as you chase a beautiful butterfly that was momentarily fluttering above your head.")
+printh("At first the scenery seems beautiful as you run through fields full of green grass, stretching on and on till yonder \n , ")
+        
