@@ -17,6 +17,32 @@ def main_menu():
     choice = input("Choice: ")
 
     return choice
+
+choice = main_menu()
+
+if choice == "1":
+    player = {
+        "name": input("Enter your name: "),
+        "occupation": "",
+        "health": 100,
+        "stamina": 50,
+        "food": 10,
+        "tharni": 50,
+        "checkpoint": 0
+    }
+
+elif choice == "2":
+    player = load_game()
+
+    if player is None:
+        print("No save file found.")
+        quit()
+
+    print(f"Welcome back, {player['name']}!")
+
+else:
+    quit()
+
 def type_print(text, delay=0.03):
     for char in text:
         sys.stdout.write(char)
