@@ -1,9 +1,9 @@
 import json
 import os
-import carpenter
-import doctor
-import fisherman
-import hunter
+import occupations.carpenter as carpenter
+import occupations.doctor as doctor
+import occupations.fisherman as fisherman
+import occupations.hunter as hunter
 import time
 import sys
 import time
@@ -84,6 +84,9 @@ if occupation.capitalize() in occupations:
 else:
     print("Occupation has not been selected")
 
+player["checkpoint"] = 1
+save_game(player)
+
 time.sleep(2)
 
 
@@ -126,10 +129,12 @@ elif x.strip().lower() in ['no', 'n']:
     type_print(f"Current Stamina: {stamina}, Health: {health}")
     type_print("You wake up a few hours later, feeling weak and disoriented. \n You look around and see that you are lying on the side of the road, with a few concerned townsfolk gathered around you. \n They offer you some water and help you to your feet, but you know that you need to find a place to rest soon.")
     type_print("You continue walking, but you can feel your energy draining away. ")
-          
+
 else:
     type_print("\nInvalid choice! Please type Yes or No.")
 
+player["checkpoint"] = 3
+save_game(player)
 food=10
 tharni=50
 printh("You currently have 10 weights of Food left.")
