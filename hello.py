@@ -16,7 +16,7 @@ def title_screen():
     """Display a professional ASCII art title screen."""
     clear_terminal()
     
-    # Professional ASCII art logo for "ELWEN : LEGENDS OF THE VENEER"
+   
     logo = """
     
     ███████████████████████████████████████████████████████████████████████████████████
@@ -51,7 +51,7 @@ def title_screen():
     print(logo)
     time.sleep(0.6)
     
-    # Menu options
+   
     menu = """
     ╔═════════════════════════════════════╗
     ║                                     ║
@@ -85,7 +85,7 @@ def type_input(text, delay=0.03):
 
 choice = title_screen()
 
-# Menu loop to handle Settings
+
 while choice == "3":
     clear_terminal()
     print("\n╔══════════════════════════════════╗")
@@ -140,7 +140,7 @@ if choice == "1":
     player["checkpoint"] = 1
     save_game(player)
     
-    # Continue to story from checkpoint 1
+   
     resume_checkpoint = 1
 
 elif choice == "2":
@@ -165,7 +165,7 @@ else:
 
 time.sleep(2)
 
-# Only show checkpoint 1 story if player just started or is at checkpoint 0-1
+
 if resume_checkpoint <= 1:
     type_print("\nYou arrive at Moonfall Town. \nAs you look up at the glistening sky, you see stars shining like white pearls.\nThe trees bordering the side of the road are laced with beautiful strings of glowing unknown material, seems natural. \nIt is a lively town, the townsfolk are chattering and are having a good time. \nYou smile at yourself as you feel a sense of belonging.")
 
@@ -179,7 +179,7 @@ if resume_checkpoint <= 1:
 
     time.sleep(1.5)
 
-# Initialize local stats from player dict
+
 health = player["health"]
 stamina = player["stamina"]
 
@@ -216,11 +216,11 @@ if resume_checkpoint <= 1:
     player["checkpoint"] = 3
     save_game(player)
 
-# Restore food/tharni from player dict if loaded, otherwise use defaults
+
 food = player.get("food", 10)
 tharni = player.get("tharni", 50)
 
-# Only show checkpoint 3 story if player just reached it or is new
+
 if resume_checkpoint <= 3:
     printh("You currently have 10 weights of Food left.")
     choice1=type_input("You decide that for the journey ahead, you need to stock up on some food and weaponry. But you only have 50 Tharni, what do you choose? ".capitalize())
@@ -251,7 +251,7 @@ if resume_checkpoint <= 3:
 printh("As you continue your journey through the wilds of Elwen, you wander out of Moonfall \n, unknowingly as you chase a beautiful butterfly that was momentarily fluttering above your head.")
 printh("At first the scenery seems beautiful as you run through fields full of green grass, stretching on and on till yonder \n ,the emerald green of the grass spreading everywhere.")
 
-# Save and Quit option
+
 print("\n[Checkpoint reached]")
 save_and_quit = input("Would you like to save and quit? (Yes/No): ").strip().lower()
 if save_and_quit in ['yes', 'y']:
