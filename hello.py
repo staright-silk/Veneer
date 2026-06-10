@@ -259,3 +259,4 @@ if save_and_quit in ['yes', 'y']:
     save_game(player)
     print("Game saved! Thanks for playing.")
     quit()
+printh("As you continue"
