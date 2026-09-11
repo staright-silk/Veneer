@@ -8,6 +8,11 @@ import time
 import sys
 from save_system import save_game, load_game
 
+try:
+    sys.stdout.reconfigure(encoding='utf-8')
+except Exception:
+    pass
+
 def clear_terminal():
     """Clear the terminal screen (Windows/Linux/Mac compatible)."""
     os.system('cls' if os.name == 'nt' else 'clear')
@@ -18,34 +23,17 @@ def title_screen():
     
    
     logo = """
-    
-    ███████████████████████████████████████████████████████████████████████████████████
-    
-    ███████╗ ██╗     ██╗    ██╗███████╗███╗   ██╗
-    ██╔════╝ ██║     ██║    ██║██╔════╝████╗  ██║    
-    █████╗   ██║     ██║ █╗ ██║█████╗  ██╔██╗ ██║  
-    ██╔══╝   ██║     ██║███╗██║██╔══╝  ██║╚██╗██║  
-    ███████╗ ███████╗╚███╔███╔╝███████╗██║ ╚████║    
-    ╚══════╝ ╚══════╝ ╚══╝╚══╝ ╚══════╝╚═╝  ╚═══╝   
-    
-    ████████████████████████████████████████████████████████████
-    
-    ██╗     ███████╗ ██████╗ ███████╗███╗   ██╗██████╗ ███████╗        
-    ██║     ██╔════╝██╔════╝ ██╔════╝████╗  ██║██╔══██╗██╔════╝        
-    ██║     █████╗  ██║  ███╗█████╗  ██╔██╗ ██║██║  ██║███████╗          
-    ██║     ██╔══╝  ██║   ██║██╔══╝  ██║╚██╗██║██║  ██║╚════██║          
-    ███████╗███████╗╚██████╔╝███████╗██║ ╚████║██████╔╝███████║        
-    ╚══════╝╚══════╝ ╚═════╝ ╚══════╝╚═╝  ╚═══╝╚═════╝ ╚══════╝   
-        
-     ████████╗██╗  ██╗███████╗    ██╗   ██╗███████╗███╗   ██╗███████╗███████╗██████╗ 
-     ╚══██╔══╝██║  ██║██╔════╝    ██║   ██║██╔════╝████╗  ██║██╔════╝██╔════╝██╔══██╗
-        ██║   ███████║█████╗      ██║   ██║█████╗  ██╔██╗ ██║█████╗  █████╗  ██████╔╝
-        ██║   ██╔══██║██╔══╝      ╚██╗ ██╔╝██╔══╝  ██║╚██╗██║██╔══╝  ██╔══╝  ██╔══██╗
-        ██║   ██║  ██║███████╗     ╚████╔╝ ███████╗██║ ╚████║███████╗███████╗██║  ██║
-        ╚═╝   ╚═╝  ╚═╝╚══════╝      ╚═══╝  ╚══════╝╚═╝  ╚═══╝╚══════╝╚══════╝╚═╝  ╚═╝
-    
-    ███████████████████████████████████████████████████████████████████████████████████
-    
+    ==============================================================
+      _______  _______  _______  _       _________ _______      
+     |  ___  ||  _    ||  _    || |     |  _   _  ||  _    |     
+     | |   | || | |   || | |   || |     | | | | || | |   |     
+     | |___| || | |   || | |   || |     | | | | || | |   |     
+     |  _   | | | |   || | |   || |     | | | | || | |   |     
+     | | |  | || |_|   || |_|   || |_____| |_| |_| || |_|   |     
+     |_| |_|_||_______||_______||_______|_______| |_______|     
+                                                                 
+               THE FALL OF ELWEN - A WONDROUS FANTASY TALE
+    ==============================================================
     """
     
     print(logo)
@@ -53,14 +41,14 @@ def title_screen():
     
    
     menu = """
-    ╔═════════════════════════════════════╗
-    ║                                     ║
-    ║  [1] New Game                       ║
-    ║  [2] Load Game                      ║
-    ║  [3] Settings                       ║
-    ║  [4] Exit                           ║
-    ║                                     ║
-    ╚═════════════════════════════════════╝
+    +---------------------------------------+
+    |                                       |
+    |  [1] New Game                         |
+    |  [2] Load Game                        |
+    |  [3] Settings                         |
+    |  [4] Exit                             |
+    |                                       |
+    +---------------------------------------+
     """
     
     print(menu)
@@ -88,13 +76,13 @@ choice = title_screen()
 
 while choice == "3":
     clear_terminal()
-    print("\n╔══════════════════════════════════╗")
-    print("║          SETTINGS                ║")
-    print("║                                  ║")
-    print("║  Game Settings (Placeholder)    ║")
-    print("║  More options coming soon...     ║")
-    print("║                                  ║")
-    print("╚══════════════════════════════════╝\n")
+    print("\n+----------------------------------+")
+    print("|             SETTINGS             |")
+    print("|                                  |")
+    print("|  Game Settings (Placeholder)     |")
+    print("|  More options coming soon...      |")
+    print("|                                  |")
+    print("+----------------------------------+\n")
     input("Press Enter to return to menu...")
     choice = title_screen()
 
@@ -259,4 +247,69 @@ if save_and_quit in ['yes', 'y']:
     save_game(player)
     print("Game saved! Thanks for playing.")
     quit()
-printh("As you continue"
+
+printh("As you continue deeper into the wilds of Elwen, the butterfly veers toward a place no map has ever named: the Glass Fen.")
+printh("The earth softens beneath your boots. Night water glitters in every hollow, reflecting moonlight in fractured shards as if the sky itself had fallen into the marsh.")
+printh("Far ahead, a circle of ruined stone rises from the mist, crowned by a cracked silver bell that swings without wind.")
+printh("A voice, low and patient, curls through the reeds: 'The moon is hungry tonight, wanderer.'")
+
+choice = type_input("\nDo you:\n1) Follow the lantern-light into the fen\n2) Cross the fallen bridge toward the bell\n3) Stay still and listen to the whispers in the reeds\nChoose 1, 2, or 3: ").strip().lower()
+
+if choice == "1":
+    printh("You follow the lantern as it skims above the water like a dying star.")
+    printh("The fen opens into a mirror-like pool where a drowned orchard stands beneath the surface, its roots tangled around a sleeping stone gate.")
+    if food > 0:
+        food -= 2
+        health = min(100, health + 5)
+        printh("You eat a small ration and feel steadier as the cold bites at your bones. The lantern settles above a silver key lodged in the mud.")
+        printh("When you lift it, the water ripples and the bell above the ruin answers with one solemn chime.")
+    else:
+        stamina = max(0, stamina - 10)
+        health = max(0, health - 5)
+        printh("Your stomach growls, and the cold sinks deep. The lantern fades, leaving only the gleam of a silver key beneath the water.")
+    printh("A whisper rises from the pool: 'The Hollow King remembers every name he has swallowed.'")
+
+elif choice == "2":
+    printh("You step onto the bridge, and each plank groans like a waking giant.")
+    printh("At the center, the bell trembles. A single cracked face peers out from the fog: a woman made of root and moonlight, her eyes full of grief and hunger.")
+    if stamina >= 20:
+        stamina -= 15
+        printh("You hold your ground, refusing to kneel, and the woman smiles with a mouth of winter petals.")
+        printh("She presses a pale shard of obsidian into your palm. 'Carry this to the mountain of glass,' she says. 'If the gate opens, you will know why your name was chosen.'")
+    else:
+        health = max(0, health - 10)
+        stamina = max(0, stamina - 5)
+        printh("Your knees buckle beneath the crushing silence. The woman sighs and lets the bell ring once more, shaking the marsh with a deep, ancient hum.")
+        printh("When the fog clears, the bridge is gone, and a single path of black glass is all that remains.")
+
+elif choice == "3":
+    printh("You remain still, listening as the reeds whisper in a hundred voices, all of them speaking your name with different endings.")
+    printh("Then one voice rises above the rest, soft and familiar: a mother you cannot remember, a promise you have never kept, a warning buried beneath the roots.")
+    if food > 0:
+        food -= 3
+        printh("You share the last of your food with the marsh, and the whispers quiet into a solemn hush.")
+    else:
+        stamina = max(0, stamina - 5)
+        printh("The silence drains your strength, and you feel a cold pressure press against the inside of your skull.")
+    printh("The reeds part, revealing a trail of pale footprints leading toward a mountain with a single eye-shaped window lit from within.")
+
+else:
+    printh("You hesitate, and in that hesitation the butterfly returns to the air.")
+    stamina = max(0, stamina - 10)
+    health = max(0, health - 3)
+    printh("The bell tolls three times. The marsh answers with a sigh, and the path ahead turns briefly crimson beneath the moonlight.")
+
+printh("The mist begins to part, revealing a road of black glass curving toward a mountain crowned with a single eye-shaped opening that glows behind the clouds.")
+printh("A chill runs through you, not from the night, but from the knowledge that the stone gate beneath the fen is waking.")
+printh("Somewhere deep beneath Elwen, a buried kingdom stirs, and the echo of a forgotten crown rings through the roots of the earth.")
+printh("You are no longer just a traveler in Moonfall. You are the one the old stories were waiting for.")
+
+player["health"] = health
+player["stamina"] = stamina
+player["food"] = food
+player["checkpoint"] = 5
+save_game(player)
+
+print("\n[Story chapter complete. Your progress has been saved.]\n")
+print("The road to the mountain of glass now waits beneath the moon.\n")
+print("To be continued...\n")
