@@ -16,7 +16,7 @@ def title_screen():
     """Display a professional ASCII art title screen."""
     clear_terminal()
     
-    
+    # Professional ASCII art logo for "ELWEN : LEGENDS OF THE VENEER"
     logo = """
     
     ███████████████████████████████████████████████████████████████████████████████████
@@ -50,7 +50,8 @@ def title_screen():
     
     print(logo)
     time.sleep(0.6)
-
+    
+    # Menu options
     menu = """
     ╔═════════════════════════════════════╗
     ║                                     ║
@@ -139,7 +140,7 @@ if choice == "1":
     player["checkpoint"] = 1
     save_game(player)
     
-    
+    # Continue to story from checkpoint 1
     resume_checkpoint = 1
 
 elif choice == "2":
@@ -258,7 +259,3 @@ if save_and_quit in ['yes', 'y']:
     save_game(player)
     print("Game saved! Thanks for playing.")
     quit()
-    
-printh("You spot a tower in the distance. It's surrounded by mist and fog. \n Vines and moss surround it. The tower seems to be abandoned, but you feel a strange pull towards it. \n You decide to investigate and make your way towards the tower.")
-printh("As you approach the tower, you notice that the door is slightly ajar. \n You push it open and step inside. The air is musty and damp, and you can hear the sound of dripping water echoing through the halls. \n You make your way up the spiral staircase, your footsteps echoing in the empty tower.")
-    
